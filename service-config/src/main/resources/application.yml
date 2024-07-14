@@ -1,0 +1,26 @@
+server:
+  port: 8888
+  servlet:
+    context-path: /config
+
+management:
+  health:
+    livenessState.enabled: true
+    readinessState.enabled: true
+  endpoint.health.probes.enabled: true
+
+spring:
+  # profiles:
+  #   active: git, vault
+  application.name: service-config
+  cloud.config.server:
+  #  vault:
+  #    host: 127.0.0.1
+  #    port: 8200
+  #    order: 1
+  #    kv-version: 2
+  #    authentication: TOKEN
+  #    token: <root-token>
+    git:
+      uri: https://github.com/tourist580/config-server
+  #    order: 2
